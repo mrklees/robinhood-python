@@ -141,7 +141,7 @@ class RobinhoodClient:
     body = {
         "grant_type": "password",
         "scope": "internal",
-        "client_id": self.client_id,
+        "client_id": self._client_id,
         "expires_in": 86400,
         "device_token": "128d4221-38fb-43ba-86dd-683e356137b7",
         "password": password,
