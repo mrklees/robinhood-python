@@ -139,11 +139,14 @@ class RobinhoodClient:
 
   def set_auth_token_with_credentials(self, username, password, mfa=None):
     body = {
-      'username': username,
-      'password': password,
-      'grant_type': 'password',
-      'client_id': self._client_id
-    }
+        "grant_type": "password",
+        "scope": "internal",
+        "client_id": self.client_id,
+        "expires_in": 86400,
+        "device_token": "128d4221-38fb-43ba-86dd-683e356137b7",
+        "password": password,
+        "username": username
+    }  
     if mfa:
       body['mfa_code'] = mfa
 
